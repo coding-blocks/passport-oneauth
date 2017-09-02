@@ -6,12 +6,15 @@ exports.parse = function(json) {
     if ('string' == typeof json) {
         json = JSON.parse(json);
     }
-    console.log(json)
 
     var profile = {};
     profile.id = String(json.id);
     profile.name = json.firstname + " " + json.lastname;
     profile.email = json.email;
     profile.role = json.role;
+    profile.photo = json.photo;
+    if(json.userfacebook) profile.facebook = json.userfacebook;
+    if(json.usergithub) profile.github = json.usergithub;
+    if(json.usertwitter) profile.twitter = json.usertwitter;
     return profile;
 };

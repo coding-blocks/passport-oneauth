@@ -5,7 +5,7 @@ var OAuth2Strategy = require('passport-oauth2')
     , util = require('util')
     , Profile = require('./profile')
     , InternalOAuthError = require('passport-oauth2').InternalOAuthError
-    , APIError = require('../../errors/apierror');
+    , APIError = require('./errors/apierror');
 
 
 
