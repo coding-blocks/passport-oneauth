@@ -12,6 +12,7 @@
   ],
   "author": "tech4GT <varun.gupta1798@gmail.com> (https://codingblocks.com)",
   "license": "ISC",
+  "repository": "https://github.com/coding-blocks/passport-oneauth",
   "dependencies": {
     "passport-oauth2": "^1.4.0",
     "util": "^0.10.3"
