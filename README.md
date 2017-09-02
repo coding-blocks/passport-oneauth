@@ -44,7 +44,8 @@ var OneauthStrategy = require('passport-oneauth').Strategy;
 passport.use(new OneauthStrategy({
     clientID: ONEAUTH_CLIENT_ID,
     clientSecret: ONEAUTH_CLIENT_SECRET,
-    callbackURL: "http://127.0.0.1:3000/auth/oneauth/callback"
+    callbackURL: "http://127.0.0.1:3000/auth/oneauth/callback",
+    include : ["facebook","twiiter","github","lms"]
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ oneauthId: profile.id }, function (err, user) {
