@@ -18,6 +18,7 @@ function Strategy(options, verify) {
     options.tokenURL = options.tokenURL || 'https://account.codingblocks.com/oauth/token';
     options.scopeSeparator = options.scopeSeparator || ',';
     options.customHeaders = options.customHeaders || {};
+    options.include = options.include || [];
 
     if (!options.customHeaders['User-Agent']) {
         options.customHeaders['User-Agent'] = options.userAgent || 'passport-oneauth';
@@ -25,7 +26,7 @@ function Strategy(options, verify) {
 
     OAuth2Strategy.call(this, options, verify);
     this.name = 'oneauth';
-    this._userProfileURL = options.userProfileURL || 'https://account.codingblocks.com/api/users/me';
+    this._userProfileURL = options.userProfileURL || 'https://account.codingblocks.com/api/users/me?include=' + options.include.toString() ;
     this._oauth2.useAuthorizationHeaderforGET(true);
 
 
