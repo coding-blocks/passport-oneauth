@@ -3,7 +3,7 @@
  */
 
 exports.parse = function(json) {
-    if ('string' == typeof json) {
+    if ('string' === typeof json) {
         json = JSON.parse(json);
     }
 
@@ -13,6 +13,7 @@ exports.parse = function(json) {
     profile.email = json.email;
     profile.role = json.role;
     profile.photo = json.photo;
+    profile.verifiedemail = json.verifiedemail;
     if(json.userfacebook) profile.facebook = json.userfacebook;
     if(json.usergithub) profile.github = json.usergithub;
     if(json.usertwitter) profile.twitter = json.usertwitter;

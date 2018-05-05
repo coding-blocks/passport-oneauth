@@ -45,6 +45,7 @@ export interface OneauthProfile {
   email: string,
   role: string,
   photo: string,
+  verifiedemail?: string,
   facebook?: {},
   github?: {},
   twitter?: {},
