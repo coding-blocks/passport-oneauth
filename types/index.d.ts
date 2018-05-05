@@ -26,7 +26,6 @@ Helper definitions follow
 export interface Course {
   id: number;
   code: string;
-  username: string;
   name: string;
   batch_id: number;
   due_date: number;
@@ -43,6 +42,7 @@ export interface Course {
 export interface OneauthProfile {
   id: string,
   name: string,
+  username: string;
   email: string,
   role: string,
   photo: string,
