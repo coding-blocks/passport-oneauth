@@ -1,6 +1,6 @@
 {
   "name": "passport-oneauth",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Passport strategy for oneauth server",
   "main": "index.js",
   "types": "types",
