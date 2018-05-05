@@ -24,7 +24,7 @@ $ npm install passport-oneauth
 
 Before using `passport-oneauth`, you must register an application with Coding Blocks.
 If you have not already done so, a new application can be created at
-[developer applications](https://account.codingblocks.com/clients/add .Your application will be issued a client ID and client
+[developer applications](https://account.codingblocks.com/clients/add) .Your application will be issued a client ID and client
 secret, which need to be provided to the strategy.  You will also need to
 configure a callback URL which matches the route in your application.
 
@@ -45,7 +45,7 @@ passport.use(new OneauthStrategy({
     clientID: ONEAUTH_CLIENT_ID,
     clientSecret: ONEAUTH_CLIENT_SECRET,
     callbackURL: "http://127.0.0.1:3000/auth/oneauth/callback",
-    include : ["facebook","twiiter","github","lms"]
+    include : ["facebook","twitter","github","lms"]
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ oneauthId: profile.id }, function (err, user) {
