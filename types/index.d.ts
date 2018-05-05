@@ -1,5 +1,4 @@
-import {Strategy as OAuth2Strategy, VerifyCallback} from 'passport-oauth2'
-import {Request} from 'express'
+import {Strategy as OAuth2Strategy} from 'passport-oauth2'
 
 declare module 'passport-oauth2' {
   interface _StrategyOptionsBase {
@@ -12,6 +11,34 @@ interface OneauthStrategyOptions {
 }
 
 declare class OneauthStrategy extends OAuth2Strategy {}
+export type Strategy = OneauthStrategy;
+export const Strategy: typeof OneauthStrategy
+
+/*
+=============================
+Module related definitions end here
+Helper definitions follow
+=============================
+ */
+
+
+
+export interface Course {
+  id: number;
+  code: string;
+  name: string;
+  batch_id: number;
+  due_date: number;
+  center_id: number;
+  batch_code: string;
+  batch_name: string;
+  identifier: string;
+  center_name: string;
+}
+
+/**
+ * Type of profile object returned
+ */
 export interface OneauthProfile {
   id: string,
   name: string,
@@ -21,7 +48,10 @@ export interface OneauthProfile {
   facebook?: {},
   github?: {},
   twitter?: {},
-  lms?: {}
+  lms?: {
+    id: string,
+    roll_number: string,
+    course_identifier?: string,
+    courses?: Course[]
+  }
 }
-export type Strategy = OneauthStrategy;
-export const Strategy: typeof OneauthStrategy
