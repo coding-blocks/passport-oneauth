@@ -9,6 +9,7 @@ exports.parse = function(json) {
 
     var profile = {};
     profile.id = String(json.id);
+    profile.username = json.username;
     profile.name = json.firstname + " " + json.lastname;
     profile.email = json.email;
     profile.role = json.role;

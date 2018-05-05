@@ -26,6 +26,7 @@ Helper definitions follow
 export interface Course {
   id: number;
   code: string;
+  username: string;
   name: string;
   batch_id: number;
   due_date: number;
