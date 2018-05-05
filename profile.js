@@ -19,6 +19,5 @@ exports.parse = function(json) {
     if(json.usergithub) profile.github = json.usergithub;
     if(json.usertwitter) profile.twitter = json.usertwitter;
     if(json.userlms || json.userlm) profile.lms = json.userlms || json.userlm;
-    profile._json = json;
     return profile;
 };

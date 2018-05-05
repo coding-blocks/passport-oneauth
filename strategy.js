@@ -3,6 +3,7 @@
  */
 var OAuth2Strategy = require('passport-oauth2')
     , util = require('util')
+    , debug = require('debug')
     , Profile = require('./profile')
     , InternalOAuthError = require('passport-oauth2').InternalOAuthError
     , APIError = require('./errors/apierror');
@@ -75,7 +76,7 @@ Strategy.prototype.userProfile = function(accessToken, done) {
         }
 
         var profile = Profile.parse(json);
-        console.log(profile)
+        debug('passport:oneauth')(profile)
         profile.provider  = 'oneauth';
         profile._raw = body;
         profile._json = json;
