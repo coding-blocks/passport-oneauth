@@ -11,49 +11,54 @@ interface OneauthStrategyOptions {
 }
 
 declare class OneauthStrategy extends OAuth2Strategy {}
-export type Strategy = OneauthStrategy;
-export const Strategy: typeof OneauthStrategy
 
-/*
-=============================
-Module related definitions end here
-Helper definitions follow
-=============================
- */
+declare namespace OneauthStrategy {
+  export type Strategy = OneauthStrategy;
+  export const Strategy: typeof OneauthStrategy
+
+  /*
+  =============================
+  Module related definitions end here
+  Helper definitions follow
+  =============================
+   */
 
 
 
-export interface Course {
-  id: number;
-  code: string;
-  name: string;
-  batch_id: number;
-  due_date: number;
-  center_id: number;
-  batch_code: string;
-  batch_name: string;
-  identifier: string;
-  center_name: string;
-}
+  export interface Course {
+    id: number;
+    code: string;
+    name: string;
+    batch_id: number;
+    due_date: number;
+    center_id: number;
+    batch_code: string;
+    batch_name: string;
+    identifier: string;
+    center_name: string;
+  }
 
-/**
- * Type of profile object returned
- */
-export interface OneauthProfile {
-  id: string,
-  name: string,
-  username: string;
-  email: string,
-  role: string,
-  photo: string,
-  verifiedemail?: string,
-  facebook?: {},
-  github?: {},
-  twitter?: {},
-  lms?: {
+  /**
+   * Type of profile object returned
+   */
+  export interface OneauthProfile {
     id: string,
-    roll_number: string,
-    course_identifier?: string,
-    courses?: Course[]
+    name: string,
+    username: string;
+    email: string,
+    role: string,
+    photo: string,
+    verifiedemail?: string,
+    facebook?: {},
+    github?: {},
+    twitter?: {},
+    lms?: {
+      id: string,
+      roll_number: string,
+      course_identifier?: string,
+      courses?: Course[]
+    }
   }
 }
+
+export = OneauthStrategy
