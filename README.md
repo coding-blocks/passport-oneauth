@@ -1,11 +1,7 @@
 # passport-oneauth
 
-
-
 [Passport](http://passportjs.org/) strategy for authenticating with [OneAuth](https://codingblocks.com/)
 using the OAuth 2.0 API.
-
-
 
 This module lets you authenticate using coding-blocks's Oneauth server in your Node.js applications.
 By plugging into Passport, Oneauth authentication can be integrated into any application or framework that supports
@@ -24,18 +20,18 @@ $ npm install passport-oneauth
 
 Before using `passport-oneauth`, you must register an application with Coding Blocks.
 If you have not already done so, a new application can be created at
-[developer applications](https://account.codingblocks.com/clients/add) .Your application will be issued a client ID and client
+[developer applications](https://account.codingblocks.com/clients/add). Your application will be issued a client ID and client
 secret, which need to be provided to the strategy.  You will also need to
 configure a callback URL which matches the route in your application.
 
 #### Configure Strategy
 
 The Oneauth authentication strategy authenticates users using a coding-blocks account
-and OAuth 2.0 tokens.  The client ID and secret obtained when creating an
+and OAuth 2.0 tokens. The client ID and secret obtained when creating an
 application are supplied as options when creating the strategy. The strategy
 also requires a `verify` callback, which receives the access token and optional
 refresh token, as well as `profile` which contains the authenticated user's
-GitHub profile.  The `verify` callback must call `cb` providing a user to
+GitHub profile. The `verify` callback must call `cb` providing a user to
 complete authentication.
 
 ```js
@@ -80,11 +76,6 @@ app.get('/auth/oneauth/callback',
 Developers using the popular [Express](http://expressjs.com/) web framework can
 refer to an [example](https://github.com/passport/express-4.x-facebook-example)
 as a starting point for their own web applications.  The example shows how to
-authenticate users using Facebook.  However, because both Facebook and Oneauth
-use OAuth 2.0, the code is similar.  Simply replace references to Facebook with
+authenticate users using Facebook. However, because both Facebook and Oneauth
+use OAuth 2.0, the code is similar. Simply replace references to Facebook with
 corresponding references to Oneauth.
-
-
-
-
-
